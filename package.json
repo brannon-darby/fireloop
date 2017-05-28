@@ -1,0 +1,28 @@
+{
+  "name": "@fireloop/platform",
+  "version": "1.0.0",
+  "description": "Real-Time NodeJS Platform by MEAN Expert",
+  "repository": "https://github.com/mean-expert-official/fire-starter",
+  "scripts": {
+    "clean": "lerna clean --yes && rimraf ./node_modules",
+    "install": "lerna bootstrap",
+    "postinstall": "npm run build",
+    "build": "cd apps/webapp/ && npm run build && cd ../..",
+    "start": "npm run serve",
+    "serve": "cd apps/api/ && node server/server.js",
+    "test": "npm run install",
+    "c-add": "all-contributors add",
+    "c-generate": "all-contributors generate"
+  },
+  "engines": {
+    "node": "^7.0.0",
+    "npm": "^4.0.0"
+  },
+  "keywords": [],
+  "author": "Brannon N. Darby II",
+  "license": "MIT",
+  "devDependencies": {
+    "all-contributors-cli": "^4.3.0",
+    "lerna": "^2.0.0-rc.5"
+  }
+}
