@@ -26,6 +26,8 @@ _/ ____\__|______  ____ |  |   ____   ____ ______     |__| ____
 
 # What is FireLoop?
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brannon-darby/fireloop.svg)](https://greenkeeper.io/)
+
 [FireLoop] is a [NodeJS] Real-Time Platform that allows you to build modern and complex applications by seamlessly integrating the amazing technologies from the MEAN Stack, such as IBM's [LoopBack][ibm's loopback framework], Google's [Angular 2+], Telerik's [NativeScript 2] and [Ionic 2] Frameworks.
 
 [FireLoop] also provides you with exclusive modules that will allow you to automatically build your own Real-Time APIs, Client SDKs, Statistics, **Back- and Front-End development in [TypeScript]!**.
