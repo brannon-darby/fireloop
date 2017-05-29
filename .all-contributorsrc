@@ -6,5 +6,15 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "contributors": []
+  "contributors": [
+    {
+      "login": "brannon-darby",
+      "name": "Brannon N. Darby II",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6089253?v=3",
+      "profile": "https://github.com/brannon-darby",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }

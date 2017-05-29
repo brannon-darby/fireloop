@@ -4,12 +4,12 @@ Thanks for your interest in contributing to ![FireLoop.io](http://fireloop.io)!.
 
 As a contributor, here are the guidelines we would like you to follow:
 
-- ![Code of Conduct](#coc)
-- ![Question or Problem?](#question)
-- ![Issues and Bugs](#issue)
-- ![Feature Requests](#feature)
-- ![Submission Guidelines](#submit)
-- ![Commit Message Guidelines](#commit)
+-   ![Code of Conduct](#coc)
+-   ![Question or Problem?](#question)
+-   ![Issues and Bugs](#issue)
+-   ![Feature Requests](#feature)
+-   ![Submission Guidelines](#submit)
+-   ![Commit Message Guidelines](#commit)
 
 ## Code of Conduct
 
@@ -29,8 +29,8 @@ If you find a bug in the source code, you can help us by ![submitting an issue](
 
 You can _request_ a new feature by ![submitting an issue](#submit-issue) to our GitHub Repository. If you would like to _implement_ a new feature, please submit an issue with a proposal for your work first, to be sure that we can use it. Please consider what kind of change it is:
 
-- For a **Major Feature**, first open an issue and outline your proposal so that it can be discussed. This will also allow us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
-- **Small Features** can be crafted and directly ![submitted as a Pull Request](#submit-pr).
+-   For a **Major Feature**, first open an issue and outline your proposal so that it can be discussed. This will also allow us to better coordinate our efforts, prevent duplication of work, and help you to craft the change so that it is successfully accepted into the project.
+-   **Small Features** can be crafted and directly ![submitted as a Pull Request](#submit-pr).
 
 ## Submission Guidelines
 
@@ -40,9 +40,9 @@ Before you submit an issue, please search the issue tracker, maybe an issue for 
 
 We want to fix all the issues as soon as possible, but before fixing a bug we need to reproduce and confirm it. In order to reproduce bugs we might ask you to provide a minimal reproduction scenario in a fork of this project on GitHub. Having a live, reproducible scenario gives us wealth of important information without going back & forth to you with additional questions like:
 
-- version of FireLoop.io used
-- 3rd-party libraries and their versions
-- and most importantly - a use-case that fails
+-   version of FireLoop.io used
+-   3rd-party libraries and their versions
+-   and most importantly - a use-case that fails
 
 A minimal fork of the project allows us to quickly confirm a bug (or point out coding problem) as well as confirm that we are fixing the right problem.
 
@@ -56,39 +56,39 @@ You can file new issues by filling out our ![new issue form](https://github.com/
 
 > Before you submit your Pull Request (PR) consider the following guidelines:
 
-- Search ![GitHub](https://github.com/fireloop/platform/pulls) for an open or closed PR that relates to your submission. You don't want to duplicate effort.
-- Make your changes in a new git branch:
-
-  ```shell
-     git checkout -b my-fix-branch master
-  ```
-
-- Commit your changes using a descriptive commit message that follows our ![commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
-
-  ```shell
-     git commit -a
-  ```
-
-  Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
-
-- Push your branch to GitHub:
-
-  ```shell
-    git push origin my-fix-branch
-  ```
-
-- In GitHub, send a pull request to `fireloop:development`.
-
-- If we suggest changes then:
-
-  - Make the required updates.
-  - Re-run the FireLoop.io test suites to ensure tests are still passing.
-  - Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
+-   Search ![GitHub](https://github.com/fireloop/platform/pulls) for an open or closed PR that relates to your submission. You don't want to duplicate effort.
+-   Make your changes in a new git branch:
 
     ```shell
-    git rebase master -i
-    git push -f
+       git checkout -b my-fix-branch master
     ```
+
+-   Commit your changes using a descriptive commit message that follows our ![commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
+
+    ```shell
+       git commit -a
+    ```
+
+    Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
+
+-   Push your branch to GitHub:
+
+    ```shell
+      git push origin my-fix-branch
+    ```
+
+-   In GitHub, send a pull request to `fireloop:development`.
+
+-   If we suggest changes then:
+
+    -   Make the required updates.
+    -   Re-run the FireLoop.io test suites to ensure tests are still passing.
+    -   Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
+
+        ```shell
+        git rebase master -i
+        git push -f
+        ```
 
 That's it! Thank you for your contribution!
 
@@ -96,29 +96,29 @@ That's it! Thank you for your contribution!
 
 After your pull request is merged, you can safely delete your branch and pull the changes from the main (upstream) repository:
 
-- Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
+-   Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
 
-  ```shell
-    git push origin --delete my-fix-branch
-  ```
+    ```shell
+      git push origin --delete my-fix-branch
+    ```
 
-- Check out the master branch:
+-   Check out the master branch:
 
-  ```shell
-    git checkout master -f
-  ```
+    ```shell
+      git checkout master -f
+    ```
 
-- Delete the local branch:
+-   Delete the local branch:
 
-  ```shell
-    git branch -D my-fix-branch
-  ```
+    ```shell
+      git branch -D my-fix-branch
+    ```
 
-- Update your master with the latest upstream version:
+-   Update your master with the latest upstream version:
 
-  ```shell
-    git pull --ff upstream master
-  ```
+    ```shell
+      git pull --ff upstream master
+    ```
 
 ## Commit Message Guidelines
 
@@ -128,13 +128,11 @@ We have very precise rules over how our git commit messages can be formatted. Th
 
 Each commit message consists of a **header**, a **body**, and a **footer**. The header has a special format that includes a **type**, a **scope**, and a **subject**:
 
-```
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-```
+    <type>(<scope>): <subject>
+    <BLANK LINE>
+    <body>
+    <BLANK LINE>
+    <footer>
 
 The **header** is mandatory and the **scope** of the header is optional.
 
@@ -144,19 +142,13 @@ Footer should contain a ![closing reference to an issue](https://help.github.com
 
 Samples:
 
-```
-docs(changelog): update change log to beta.5
-```
+    docs(changelog): update change log to beta.5
 
-```
-feat(api): add support for MongoDB
-```
+    feat(api): add support for MongoDB
 
-```
-fix(release): need to depend on latest rxjs and zone.js
+    fix(release): need to depend on latest rxjs and zone.js
 
-The version in our package.json gets copied to the one we publish, and users need the latest of these.
-```
+    The version in our package.json gets copied to the one we publish, and users need the latest of these.
 
 ### Revert
 
@@ -166,15 +158,15 @@ If the commit reverts a previous commit, it should begin with `revert:`, followe
 
 Must be one of the following:
 
-- **build**: Changes that affect the build system or external dependencies (example scopes: npm, nps, Angular CLI)
-- **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-- **docs**: Documentation only changes
-- **feat**: A new feature
-- **fix**: A bug fix
-- **perf**: A code change that improves performance
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- **test**: Adding missing tests or correcting existing tests
+-   **build**: Changes that affect the build system or external dependencies (example scopes: npm, nps, Angular CLI)
+-   **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+-   **docs**: Documentation only changes
+-   **feat**: A new feature
+-   **fix**: A bug fix
+-   **perf**: A code change that improves performance
+-   **refactor**: A code change that neither fixes a bug nor adds a feature
+-   **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+-   **test**: Adding missing tests or correcting existing tests
 
 ### Scope
 
@@ -182,19 +174,19 @@ The scope should be the name of the npm package affected (as perceived by person
 
 The following is the list of supported scopes:
 
-- **admin**
-- **api**
-- **general**
-- **changelog**
-- **general**: useful for `style`, `test` and `refactor` changes that are done across all packages (e.g. `style: add missing semicolons`)
+-   **admin**
+-   **api**
+-   **general**
+-   **changelog**
+-   **general**: useful for `style`, `test` and `refactor` changes that are done across all packages (e.g. `style: add missing semicolons`)
 
 ### Subject
 
 The subject contains succinct description of the change:
 
-- use the imperative, present tense: "change" not "changed" nor "changes"
-- don't capitalize first letter
-- no dot (.) at the end
+-   use the imperative, present tense: "change" not "changed" nor "changes"
+-   don't capitalize first letter
+-   no dot (.) at the end
 
 ### Body
 
