@@ -16,9 +16,10 @@
 
 -   IBM's **[LoopBack][ibm's loopback framework]**
 -   Google's **[Angular 2+]**
--   Telerik's **[NativeScript 2]** and **[Ionic 2]**
 -   Microsoft's **[TypeScript]**
--   Joyent's **[NodeJS]**
+-   Telerik's **[NativeScript 2]**
+-   **[Ionic 2]**
+-   **[NodeJS]**
 -   **[MongoDB](https://www.mongodb.com/)**
 
 ##
@@ -28,7 +29,7 @@
 -   Build your own **Real-Time APIs**
 -   Generate **Client SDKs** to interact with Back-End APIs
 -   Enhance Charts and Graphs with **Real-Time Statistics**
--   Develop **Full-Stack**, Advanced Web Applications written in **[TypeScript]**
+-   Develop Advanced, **Full-Stack** Web Applications written in **[TypeScript]**
 
 # **[FireLoop]** Features
 
@@ -66,7 +67,7 @@
 > ### **Global [NPM] Packages**
 
 ```sh
-$ npm install -g @mean-expert/fireloop lerna @angluar/cli loopback-cli rimraf
+`$` npm install -g @mean-expert/fireloop lerna @angluar/cli loopback-cli rimraf
 ```
 
 -   **[FireLoop]**
@@ -80,9 +81,9 @@ $ npm install -g @mean-expert/fireloop lerna @angluar/cli loopback-cli rimraf
 > ### **Clone this repo, _`cd`_ to it, and _`install`_ project dependencies**
 
 ```sh
-$ git clone https://github.com/fireloop/platform
-$ cd fireloop
-$ npm install
+`$` git clone https://github.com/fireloop/platform
+`$` cd fireloop
+`$` npm install
 ```
 
 # **[FireLoop]** Documentation

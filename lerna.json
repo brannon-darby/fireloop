@@ -1,9 +1,11 @@
 {
   "lerna": "2.0.0-rc.5",
   "packages": [
+    "./",
     "apps/*",
     "modules/*",
-    "packages/*"
+    "packages/*",
+    "packages/fireloop.io/*"
   ],
   "version": "0.0.0"
 }

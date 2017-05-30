@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85670284-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Scaling FireLoop | Fireloop Documentation | Designed for Modern Real-Time Applications by MEAN Expert.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#C13A00">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="FireLoop.io              Scaling FireLoopBuilding apps with FireLoop is nice and easy, but that would be wo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scaling FireLoop">
+<meta property="og:url" content="http://fireloop.io/en/scaling-fireloop/index.html">
+<meta property="og:site_name" content="Fireloop Documentation">
+<meta property="og:description" content="FireLoop.io              Scaling FireLoopBuilding apps with FireLoop is nice and easy, but that would be wo">
+<meta property="og:image" content="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png">
+<meta property="og:updated_time" content="2017-05-04T21:13:32.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scaling FireLoop">
+<meta name="twitter:description" content="FireLoop.io              Scaling FireLoopBuilding apps with FireLoop is nice and easy, but that would be wo">
+<meta name="twitter:image" content="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png">
+    
+        <link rel="alternative" href="/atom.xml" title="Fireloop Documentation" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.2">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar">
+          <img src="/img/avatar.png" style="width:125px;">
+        </a>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/getting-started/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Getting Started
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/api/"  >
+                <i class="icon icon-lg icon-book"></i>
+                Api
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/comparison-table/"  >
+                <i class="icon icon-lg icon-first-order"></i>
+                Comparison Table
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-client-apps/"  >
+                <i class="icon icon-lg icon-rocket"></i>
+                Creating Client Applications
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-client-sdk/"  >
+                <i class="icon icon-lg icon-cogs"></i>
+                Creating Client SDK
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/creating-fireloop-models/"  >
+                <i class="icon icon-lg icon-database"></i>
+                Creating FireLoop Models
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/handle-disconnections/"  >
+                <i class="icon icon-lg icon-plug"></i>
+                Handle DC
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/realtime-stats-example/"  >
+                <i class="icon icon-lg icon-fire"></i>
+                Real Time Stats Example
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/scaling-fireloop/"  >
+                <i class="icon icon-lg icon-free-code-camp"></i>
+                Scaling Fireloop
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/en/serving-apps/"  >
+                <i class="icon icon-lg icon-server"></i>
+                Serving Applications
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/mean-expert-official/fireloop.io" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Scaling FireLoop</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder=" Search......">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+
+      <div class="header-lang-select-wrap header-link">
+        <label>
+        
+          English
+        
+        </label>
+        <select id="header-lang-select" class="header-lang-select" onchange="location = this.options[this.selectedIndex].value">
+        
+          
+            <option
+              value=""
+              selected
+              data-href=""
+            >
+              English
+            </option>
+          
+            <option
+              value="/es/scaling-fireloop/"
+              
+              data-href="/es/scaling-fireloop/"
+            >
+              Spanish
+            </option>
+          
+        
+        </select>
+      </div>
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Docs</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-04T21:13:32.971Z" itemprop="datePublished" class="page-time">
+  2017-05-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    <!-- Select Lenguaje -->
+
+    
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Scaling-FireLoop"><span class="post-toc-number">1.</span> <span class="post-toc-text">Scaling FireLoop</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Requirements"><span class="post-toc-number">2.</span> <span class="post-toc-text">Requirements</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Creating-DataSource"><span class="post-toc-number">3.</span> <span class="post-toc-text">Creating DataSource</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Enable-Clustering-Mode"><span class="post-toc-number">4.</span> <span class="post-toc-text">Enable Clustering Mode</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-scaling-fireloop"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Scaling FireLoop</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-5-4 17:13" datetime="2017-05-04T21:13:32.971Z"  itemprop="datePublished">2017-05-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://storage.googleapis.com/mean-expert-images/fireloop-logo.png" alt="FireLoop.io" title="">
+                </div>
+                <div class="image-caption">FireLoop.io</div>
+            </figure>
+<h2 id="Scaling-FireLoop"><a href="#Scaling-FireLoop" class="headerlink" title="Scaling FireLoop"></a>Scaling FireLoop</h2><p>Building apps with <a href="http://fireloop.io">FireLoop</a> is nice and easy, but that would be worthless if the platform wouldn’t scale into multiple server or even process instances.</p>
+<p>The following documentation will explain how to enable <a href="http://fireloop.io">FireLoop</a> to work under clustered environments.</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
+<li><a href="https://github.com/mean-expert-official/loopback-sdk-builder" target="_blank" rel="external">SDK Builder</a> v2.1.0-rc.10+</li>
+<li><a href="http://github.com/mean-expert-official/loopback-component-realtime" target="_blank" rel="external">LoopBack Component Real-Time</a> v1.0.0-rc.5+</li>
+<li><a href="https://socket.io" target="_blank" rel="external">Socket IO</a> Adapter <em>(Any valid socket.io-adapter like <a href="https://www.npmjs.com/package/socket.io-adapter-mongo" target="_blank" rel="external">socket.io-adapter-mongo</a>, <a href="https://www.npmjs.com/package/socket.io-redis" target="_blank" rel="external">socket.io-redis</a>, etc)</em></li>
+<li>PubSub capable database like <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a></li>
+</ul>
+<h2 id="Creating-DataSource"><a href="#Creating-DataSource" class="headerlink" title="Creating DataSource"></a>Creating DataSource</h2><p>Regardless the datasource you select for your API Models, you will need to create a datasource pointing to a <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a> database.</p>
+<p>If you already selected <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a> database for your API Models, you won’t need to create a new datasource, users using any other databases like SQL ones, <em>will require to create a new datasource pointing to <a href="https://www.mongodb.com/" target="_blank" rel="external">MongoDB</a> or <a href="https://redis.io/" target="_blank" rel="external">Redis</a></em> and install its <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> dependency.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> to/project/api</div><div class="line">$ npm install --save [loopback-connector-mongodb | loopback-connector-redis]</div></pre></td></tr></table></figure>
+<p>and configure as any other <a href="http://loopback.io" target="_blank" rel="external">LoopBack</a> datasource, example:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"mongodb"</span>: &#123;</div><div class="line">    <span class="attr">"url"</span>: <span class="string">"mongodb://user:pass@host:27016/dbname"</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"mongodb"</span>,</div><div class="line">    <span class="attr">"connector"</span>: <span class="string">"mongodb"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>server/datasources.json</code></p>
+<h2 id="Enable-Clustering-Mode"><a href="#Enable-Clustering-Mode" class="headerlink" title="Enable Clustering Mode"></a>Enable Clustering Mode</h2><p>In order to enable the clustering mode, we need to set the following configurations:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"@mean-expert/loopback-component-realtime"</span>: &#123;</div><div class="line">    <span class="attr">"auth"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"debug"</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">"driver"</span>: &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"socket.io"</span>,</div><div class="line">      <span class="attr">"options"</span>: &#123;</div><div class="line">        <span class="attr">"adapter"</span>: &#123;</div><div class="line">          <span class="attr">"name"</span>: <span class="string">"socket.io-adapter-mongo"</span>,</div><div class="line">          <span class="attr">"datasource"</span>: <span class="string">"mongodb"</span></div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Please note that the <code>adapter.name</code> should be the adapter you selected and installed prior this process, as well as the <code>adapter.datasource</code> should be the name of the datasource you created.</p>
+<p>After following the configurations above, <a href="http://fireloop.io">FireLoop</a> will work either on clustered process or server environments.</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last Updated：<time datetime="2017-05-04T21:13:32.971Z" title="2017-5-4 17:13" itemprop="dateUpdated">2017:4:17:13</time>
+</span><br>
+
+
+        All rigths Reserved：<a href="/en/scaling-fireloop/" target="_blank" rel="external">http://fireloop.io/en/scaling-fireloop/</a>
+    </div>
+    <footer>
+        <a href="http://fireloop.io">
+            <img src="/img/avatar.png" alt="Mean.Expert">
+            Mean.Expert
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/en/comparison-table/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Comparison Table</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/en/realtime-stats-example/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Real Time Stats Example</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+   <!-- 
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="scaling-fireloop" data-title="Scaling FireLoop" data-url="http://fireloop.io/en/scaling-fireloop/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.2');
+
+
+</script>
+
+
+
+
+
+
+ -->
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        Total number of visitors : <span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        Site total views : <span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+       <!-- <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>The blog content follows<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution - Noncommercial - Share Alike 4.0 Protocol</a></span>
+        </p> -->
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Fireloop Documentation &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.2" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

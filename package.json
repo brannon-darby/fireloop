@@ -2,11 +2,10 @@
   "name": "@fireloop/platform",
   "version": "1.0.0",
   "description": "Real-Time NodeJS Platform by MEAN Expert",
-  "repository": "https://github.com/mean-expert-official/fire-starter",
+  "repository": "https://github.com/fireloop/platform",
   "scripts": {
     "clean": "lerna clean --yes && rimraf ./node_modules",
-    "install": "lerna bootstrap",
-    "postinstall": "npm run build",
+    "install": "lerna bootstrap --hoist",
     "build": "cd apps/webapp/ && npm run build && cd ../..",
     "start": "npm run serve",
     "serve": "cd apps/api/ && node server/server.js",

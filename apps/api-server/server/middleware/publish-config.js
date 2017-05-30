@@ -5,12 +5,12 @@ function createConfig() {
   const nodeEnv = process.env.NODE_ENV || 'development';
 
   const result = {
-    baseUrl: baseUrl.replace(/\/$/, ''),
+    baseUrl,
     version,
     nodeEnv,
   }
 
-  return `window.apiConfig = ${JSON.stringify(result)}`
+  return `window.apiConfig = ${result}`
 }
 
 module.exports = function configMiddleware() {
