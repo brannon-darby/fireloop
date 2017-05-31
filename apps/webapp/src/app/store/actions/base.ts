@@ -1,7 +1,7 @@
 /* tslint:disable */
 import { Action } from '@ngrx/store';
 import { type } from '../util';
-import { LoopBackFilter } from '../../shared/sdk/models';
+import { LoopBackFilter } from '../../sdk';
 
 export function BaseActionTypesFactory(modelName: string): any {
   let types: any = {};

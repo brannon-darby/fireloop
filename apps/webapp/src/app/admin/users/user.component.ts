@@ -1,11 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RealTime } from '../../shared/sdk/services/core/real.time';
-import { FireLoopRef, Account } from '../../shared/sdk/models';
+import { FireUi } from '@fireloop/fire-ui';
+import { Subscription } from 'rxjs/Subscription';
+
+import { RealTime, FireLoopRef, Account } from '../../sdk';
 import { UserFormComponent } from './form/user-form.component';
 import { UserService } from './user.service';
-import { UiService } from '../../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'fire-user',
@@ -20,7 +20,7 @@ export class UserComponent implements OnDestroy {
 
   constructor(
     private modal: NgbModal,
-    public uiService: UiService,
+    public fireUi: FireUi,
     public userService: UserService,
     private rt: RealTime,
   ) {
@@ -70,7 +70,7 @@ export class UserComponent implements OnDestroy {
       `,
       confirmButtonText: 'Yes, Delete'
     };
-    this.uiService.alertError(question, () => this.handleAction({ type: 'delete', payload: user }), () => { });
+    this.fireUi.alertError(question, () => this.handleAction({ type: 'delete', payload: user }), () => { });
   }
 
   handleAction(event) {
@@ -79,10 +79,10 @@ export class UserComponent implements OnDestroy {
         this.subscriptions.push(this.userRef.create(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('User Created', 'The User was created successfully.');
+            this.fireUi.toastSuccess('User Created', 'The User was created successfully.');
           }, (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Create User Failed', err.message || err.error.message);
+            this.fireUi.toastError('Create User Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -90,20 +90,20 @@ export class UserComponent implements OnDestroy {
         this.subscriptions.push(this.userRef.upsert(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('User Updated', 'The User was updated successfully.');
+            this.fireUi.toastSuccess('User Updated', 'The User was updated successfully.');
           }, (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Update User Failed', err.message || err.error.message);
+            this.fireUi.toastError('Update User Failed', err.message || err.error.message);
           },
         ));
         break;
       case 'delete':
         this.subscriptions.push(this.userRef.remove(event.payload).subscribe(
           () => {
-            this.uiService.toastSuccess('User Deleted', 'The User was deleted successfully.');
+            this.fireUi.toastSuccess('User Deleted', 'The User was deleted successfully.');
           },
           (err) => {
-            this.uiService.toastError('Delete User Failed', err.message || err.error.message);
+            this.fireUi.toastError('Delete User Failed', err.message || err.error.message);
           },
         ));
         break;

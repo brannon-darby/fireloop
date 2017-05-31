@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from "@angular/router";
-import { UiService, NavItem } from '../../ui/ui.service';
+import { FireUi, NavItem } from '@fireloop/fire-ui';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -21,7 +21,7 @@ export class UiDemoComponent implements OnDestroy {
   public nav: NavItem[];
 
   constructor(
-    private uiService: UiService,
+    private fireUi: FireUi,
     public router: Router
   ) {
     this.nav = [

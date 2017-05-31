@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FireLoopRef, Account, Role, ACL } from '../../shared/sdk/models';
-import { RealTime } from '../../shared/sdk/services';
+import { DashCard } from '@fireloop/fire-ui';
+
+import { RealTime, FireLoopRef, Account, Role, ACL } from '../../sdk';
 import { Subscription } from 'rxjs/Subscription';
-import { DashCard } from '../../ui/ui.service';
 
 @Component({
   selector: 'fire-admin-dashboard',

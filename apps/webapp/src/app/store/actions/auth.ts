@@ -1,7 +1,7 @@
 /* tslint:disable */
 import { Action } from '@ngrx/store';
 import { type } from '../util';
-import { SDKToken } from '../../shared/sdk/models';
+import { SDKToken } from '../../sdk';
 
 export const AuthActionTypes = {
   LOAD_TOKEN: type('[Auth] Load token from storage into store'),

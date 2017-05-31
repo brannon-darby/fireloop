@@ -2,7 +2,7 @@
 import { Observable } from 'rxjs/Observable';
 import { createSelector } from 'reselect';
 import { Action } from '@ngrx/store';
-import { SDKToken, Account } from '../../shared/sdk/models';
+import { SDKToken, Account } from '../../sdk';
 import { AuthActionTypes } from '../actions/auth';
 import { UserActionTypes } from '../actions/user';
 

@@ -1,9 +1,9 @@
 <fire-card icon="users"
-          title="Users"
-          [createButton]="userService.getCardButtons()"
-          (action)="create()">
+           title="Users"
+           [createButton]="userService.getCardButtons()"
+           (action)="create()">
   <table class="table table-striped table-sm"
-         [class.table-responsive]="!uiService.isLargeScreen">
+         [class.table-responsive]="!fireUi.isLargeScreen">
     <thead>
       <tr>
         <th *ngFor="let header of userService.getTableHeaders()">{{ header }}</th>

@@ -1,9 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserActions } from '../shared/sdk/actions/user';
-import { AccountApi } from '../shared/sdk/services';
-import { UiService, NavItem } from '../ui/ui.service';
+import { FireUi, NavItem } from '@fireloop/fire-ui';
 import { Subscription } from 'rxjs/Subscription';
+
+import { AccountApi } from '../sdk';
 
 @Component({
   selector: 'fire-home',
@@ -17,11 +17,11 @@ export class HomeComponent implements OnDestroy {
   private subscriptions: Subscription[] = new Array<Subscription>();
 
   constructor(
-    private uiService: UiService,
+    private fireUi: FireUi,
     private userApi: AccountApi,
     private store: Store<any>,
   ) {
-    this.uiService.setSidebarNav([
+    this.fireUi.setSidebarNav([
       {
         'name': 'Auth',
         'link': '/home/auth',

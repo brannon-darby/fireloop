@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Store } from '@ngrx/store';
 
-import { Account } from '../../shared/sdk/models';
+import { Account } from '../../sdk';
 import { getUserById } from '../reducers/user';
 
 @Injectable()

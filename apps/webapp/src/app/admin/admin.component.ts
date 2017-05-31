@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { UserActions } from '../shared/sdk/actions/user';
-import { AccountApi } from '../shared/sdk/services';
-import { UiService, NavItem } from '../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
+import { FireUi, NavItem } from '@fireloop/fire-ui';
 
 @Component({
   selector: 'fire-admin',
@@ -14,14 +10,11 @@ import { Subscription } from 'rxjs/Subscription';
 export class AdminComponent {
   private authIcon;
   private sidebarNav: NavItem[];
-  private subscriptions: Subscription[] = new Array<Subscription>();
 
   constructor(
-    private uiService: UiService,
-    private userApi: AccountApi,
-    private store: Store<any>,
+    private fireUi: FireUi,
   ) {
-    this.uiService.setSidebarNav([
+    this.fireUi.setSidebarNav([
       {
         'name': 'Dashboard',
         'link': '/admin/dashboard',
@@ -45,15 +38,4 @@ export class AdminComponent {
     ]);
   }
 
-  ngOnDestroy() {
-    this.subscriptions.forEach((subscription: Subscription) => subscription.unsubscribe());
-  }
-
-  getAuthIcon() {
-    if (this.userApi.isAuthenticated()) {
-      return 'unlock'
-    } else {
-      return 'lock'
-    }
-  }
 }

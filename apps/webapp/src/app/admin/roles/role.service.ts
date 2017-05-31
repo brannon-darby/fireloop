@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { FireLoopRef, Role } from '../../shared/sdk/models';
 import { Subscription } from 'rxjs/Subscription';
-import { FormService } from '../../ui/form/ui-form.service';
+import { FireUi } from '@fireloop/fire-ui';
 import { Observable } from 'rxjs/Observable';
+
+import { FireLoopRef, Role } from '../../sdk';
 
 @Injectable()
 export class RoleService {
 
   constructor(
-    public formService: FormService,
+    public fireUi: FireUi,
   ) { }
 
   getCardButtons() {
@@ -68,14 +69,14 @@ export class RoleService {
     switch (formType) {
       case 'create':
         return [
-          this.formService.input('name', {
+          this.fireUi.fireForm.input('name', {
             label: 'Name',
             className: 'col-12',
             addonLeft: {
               class: 'fa fa-fw fa-tag'
             }
           }),
-          this.formService.input('description', {
+          this.fireUi.fireForm.input('description', {
             label: 'Description',
             className: 'col-12',
             addonLeft: {
@@ -85,14 +86,14 @@ export class RoleService {
         ];
       case 'update':
         return [
-          this.formService.input('name', {
+          this.fireUi.fireForm.input('name', {
             label: 'Name',
             className: 'col-12',
             addonLeft: {
               class: 'fa fa-fw fa-tag'
             }
           }),
-          this.formService.input('description', {
+          this.fireUi.fireForm.input('description', {
             label: 'Description',
             className: 'col-12',
             addonLeft: {
@@ -106,7 +107,7 @@ export class RoleService {
         options.roles.forEach((role: any) => (roles.push({ label: role.name, value: role.id })));
         options.users.forEach((user: any) => (users.push({ label: user.email, value: user.id })));
         return [
-          this.formService.select('id', {
+          this.fireUi.fireForm.select('id', {
             label: 'Role',
             className: 'col-12',
             addonLeft: {
@@ -114,7 +115,7 @@ export class RoleService {
             },
             options: roles
           }),
-          this.formService.select('user', {
+          this.fireUi.fireForm.select('user', {
             label: 'User',
             className: 'col-12',
             addonLeft: {

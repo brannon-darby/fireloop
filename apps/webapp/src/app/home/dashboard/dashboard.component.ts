@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
-import { RealTime } from '../../shared/sdk/services/core/real.time';
-import { FireLoopRef, Todo, Note, Container } from '../../shared/sdk/models';
 import { Subscription } from 'rxjs/Subscription';
-import { DashCard } from '../../ui/ui.service';
+import { DashCard } from '@fireloop/fire-ui';
+
+import { RealTime, FireLoopRef, Todo, Note, Container } from '../../sdk';
 
 @Component({
   selector: 'fire-home-dashboard',

@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { createSelector } from 'reselect';
 import { Action } from '@ngrx/store';
 import { BaseReducerFactory } from './base';
-import { Account } from '../../shared/sdk/models';
+import { Account } from '../../sdk';
 import { UserActionTypes } from '../actions/user';
 
 export interface State {

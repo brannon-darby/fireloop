@@ -2,7 +2,7 @@
 import { Action } from '@ngrx/store';
 import { type } from '../util';
 import { BaseActionTypesFactory, BaseActionsFactory } from './base';
-import { SDKToken, Account } from '../../shared/sdk/models';
+import { SDKToken, Account } from '../../sdk';
 
 export const UserActionTypes =
   Object.assign(BaseActionTypesFactory('Account'), {

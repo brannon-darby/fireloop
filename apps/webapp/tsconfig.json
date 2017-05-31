@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
+    "outDir": "../../dist/webapp",
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
@@ -12,6 +12,14 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ],
+      "@fireloop/*": [
+        "../../packages/*"
+      ]
+    },
     "lib": [
       "es2016",
       "dom"

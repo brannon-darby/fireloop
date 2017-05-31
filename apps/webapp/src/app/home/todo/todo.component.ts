@@ -1,11 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RealTime } from '../../shared/sdk/services/core/real.time';
-import { FireLoopRef, Todo } from '../../shared/sdk/models';
+import { FireUi } from '@fireloop/fire-ui';
+import { Subscription } from 'rxjs/Subscription';
+
+import { RealTime, FireLoopRef, Todo } from '../../sdk';
 import { TodoFormComponent } from './todo-form.component';
 import { TodoService } from './todo.service';
-import { UiService } from '../../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'fire-todo',
@@ -20,7 +20,7 @@ export class TodoComponent implements OnDestroy {
 
   constructor(
     private modal: NgbModal,
-    public uiService: UiService,
+    public fireUi: FireUi,
     public todoService: TodoService,
     private rt: RealTime
   ) {
@@ -66,7 +66,7 @@ export class TodoComponent implements OnDestroy {
       `,
       confirmButtonText: 'Yes, Delete'
     };
-    this.uiService.alertError(question, () => this.handleAction({ type: 'delete', payload: todo }), () => { });
+    this.fireUi.alertError(question, () => this.handleAction({ type: 'delete', payload: todo }), () => { });
   }
 
 
@@ -76,11 +76,11 @@ export class TodoComponent implements OnDestroy {
         this.subscriptions.push(this.todoRef.create(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Todo Created', 'The Todo was created successfully.');
+            this.fireUi.toastSuccess('Todo Created', 'The Todo was created successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Create Todo Failed', err.message || err.error.message);
+            this.fireUi.toastError('Create Todo Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -88,21 +88,21 @@ export class TodoComponent implements OnDestroy {
         this.subscriptions.push(this.todoRef.upsert(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Todo Updated', 'The Todo was updated successfully.');
+            this.fireUi.toastSuccess('Todo Updated', 'The Todo was updated successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Update Todo Failed', err.message || err.error.message);
+            this.fireUi.toastError('Update Todo Failed', err.message || err.error.message);
           },
         ));
         break;
       case 'delete':
         this.subscriptions.push(this.todoRef.remove(event.payload).subscribe(
           () => {
-            this.uiService.toastSuccess('Todo Deleted', 'The Todo was deleted successfully.');
+            this.fireUi.toastSuccess('Todo Deleted', 'The Todo was deleted successfully.');
           },
           (err) => {
-            this.uiService.toastError('Delete Todo Failed', err.message || err.error.message);
+            this.fireUi.toastError('Delete Todo Failed', err.message || err.error.message);
           },
         ));
         break;

@@ -12,7 +12,7 @@ import { of } from 'rxjs/observable/of';
 
 import { UserActions } from '../actions/user';
 import { ErrorActions } from '../actions/error';
-import { AccountApi } from '../../shared/sdk/services';
+import { AccountApi } from '../../sdk';
 import { getUserById } from '../reducers/user';
 
 @Injectable()

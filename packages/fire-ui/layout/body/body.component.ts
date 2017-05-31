@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UiService } from '../../ui.service';
+import { FireUi } from '../../fire-ui';
 import { BreadcrumbService } from 'ng2-breadcrumb/ng2-breadcrumb';
 
 @Component({
@@ -8,7 +8,8 @@ import { BreadcrumbService } from 'ng2-breadcrumb/ng2-breadcrumb';
   styleUrls: ['./body.component.scss']
 })
 export class BodyComponent {
-  constructor(public uiService: UiService, public breadcrumbService: BreadcrumbService) {
-
-  }
+  constructor(
+    public fireUi: FireUi,
+    public breadcrumbService: BreadcrumbService
+  ) { }
 }

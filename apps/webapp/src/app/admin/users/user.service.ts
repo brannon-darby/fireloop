@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { FireLoopRef, Account } from '../../shared/sdk/models';
-import { FormService } from '../../ui/form/ui-form.service';
+import { FireUi } from '@fireloop/fire-ui';
+
+import { FireLoopRef, Account } from '../../sdk';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
 
   constructor(
-    private formService: FormService,
+    private fireUi: FireUi,
   ) {
 
   }
@@ -39,28 +40,28 @@ export class UserService {
 
   getFormFields(formType: string) {
     let fields = [
-      this.formService.email('email', {
+      this.fireUi.fireForm.email('email', {
         label: 'Email',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-envelope-o'
         }
       }),
-      this.formService.password('password', {
+      this.fireUi.fireForm.password('password', {
         label: 'Password',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-key'
         }
       }),
-      this.formService.input('firstName', {
+      this.fireUi.fireForm.input('firstName', {
         label: 'First Name',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-user-o'
         }
       }),
-      this.formService.input('lastName', {
+      this.fireUi.fireForm.input('lastName', {
         label: 'Last Name',
         className: 'col-12',
         addonLeft: {

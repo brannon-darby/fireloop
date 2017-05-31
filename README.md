@@ -15,7 +15,7 @@
 > **[FireLoop]** is a **[NodeJS]** _`Real-Time Platform`_ that makes it effortless to build modern and complex applications by seamlessly integrating amazing _`MEAN Stack`_ technologies, such as:
 
 -   IBM's **[LoopBack][ibm's loopback framework]**
--   Google's **[Angular 2+]**
+-   Google's **[Angular 4+]**
 -   Microsoft's **[TypeScript]**
 -   Telerik's **[NativeScript 2]**
 -   **[Ionic 2]**
@@ -39,7 +39,7 @@
 -   **1 Command Line Tool** for everything (Server, Web Clients, Mobile Clients, SDK Builder)
 -   **Full-Stack [TypeScript]** Development
 -   **[LoopBack][ibm's loopback framework]** 2 and 3 Integration
--   **[Angular 2+]** Integration
+-   **[Angular 4+]** Integration
 -   **[NativeScript 2]** Integration
 -   **[Ionic 2]** Integration
 -   **[SDK Builder]** Integration
@@ -57,7 +57,7 @@
 > ### **This project is a mono-repo managed with [LernaJS](https://lernajs.io), and consists of the following:**
 
 -   _`apps`_ - Your Applications
-    -   **webapp** - Your Web App built with **[Angular 2+]** and integrated with **[FireLoop]**.
+    -   **webapp** - Your Web App built with **[Angular 4+]** and integrated with **[FireLoop]**.
     -   **api-server** - Your REST API built with **[LoopBack]** and integrated with **[FireLoop]**.
 -   _`modules`_ - Modules that add functionality to your `apps`.
 -   _`packages`_ - Shareable packages used by your `apps` and `modules`.
@@ -67,7 +67,7 @@
 > ### **Global [NPM] Packages**
 
 ```sh
-`$` npm install -g @mean-expert/fireloop lerna @angluar/cli loopback-cli rimraf
+> npm install -g @mean-expert/fireloop lerna @angluar/cli loopback-cli rimraf
 ```
 
 -   **[FireLoop]**
@@ -81,9 +81,9 @@
 > ### **Clone this repo, _`cd`_ to it, and _`install`_ project dependencies**
 
 ```sh
-`$` git clone https://github.com/fireloop/platform
-`$` cd fireloop
-`$` npm install
+> git clone https://github.com/fireloop/platform
+> cd fireloop
+> npm install
 ```
 
 # **[FireLoop]** Documentation
@@ -107,7 +107,7 @@
 
 #### This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind are welcome!
 
-[angular 2+]: http://angular.io
+[angular 4+]: https://angular.io
 
 [firebase]: https://firebase.google.com/
 

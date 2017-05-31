@@ -8,7 +8,7 @@ import { Effect, Actions, toPayload } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 
 import { AuthActionTypes, AuthActions } from '../actions/auth';
-import { LoopBackAuth } from '../../shared/sdk/services';
+import { LoopBackAuth } from '../../sdk';
 
 @Injectable()
 export class AuthEffects {

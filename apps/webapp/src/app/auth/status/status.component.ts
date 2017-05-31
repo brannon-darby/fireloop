@@ -1,8 +1,9 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserActions } from '../../store/actions';
-import { AccountApi } from '../../shared/sdk/services';
 import { Subscription } from 'rxjs/Subscription';
+
+import { UserActions } from '../../store/actions';
+import { AccountApi } from '../../sdk';
 
 @Component({
   selector: 'fire-auth-status',

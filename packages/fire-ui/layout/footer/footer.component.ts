@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UiService } from '../../ui.service';
+import { FireUi } from '../../fire-ui';
 
 @Component({
   selector: 'fire-footer',
@@ -7,7 +7,7 @@ import { UiService } from '../../ui.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  constructor(public uiService: UiService) {
+  constructor(public fireUi: FireUi) {
 
   }
 }

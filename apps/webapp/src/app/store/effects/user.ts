@@ -16,7 +16,7 @@ import { BaseEffects } from './base';
 
 import { UserActionTypes, UserActions } from '../actions/user';
 import { ErrorActions } from '../actions/error';
-import { AccountApi } from '../../shared/sdk/services';
+import { AccountApi } from '../../sdk';
 
 @Injectable()
 export class UserEffects extends BaseEffects {

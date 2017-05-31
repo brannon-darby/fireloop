@@ -1,11 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FireLoopRef, ACL, Role } from '../../shared/sdk/models';
-import { RealTime } from '../../shared/sdk/services/core/real.time';
+import { RealTime, FireLoopRef, ACL, Role } from '../../sdk';
+import { FireUi } from '@fireloop/fire-ui';
+import { Subscription } from 'rxjs/Subscription';
+
 import { ControlFormComponent } from './form/control-form.component';
 import { ControlService } from './control.service';
-import { UiService } from '../../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'fire-control',
@@ -22,7 +22,7 @@ export class ControlComponent implements OnDestroy {
 
   constructor(
     private modal: NgbModal,
-    public uiService: UiService,
+    public fireUi: FireUi,
     public controlService: ControlService,
     private rt: RealTime,
   ) {
@@ -72,7 +72,7 @@ export class ControlComponent implements OnDestroy {
       `,
       confirmButtonText: 'Yes, Delete'
     };
-    this.uiService.alertError(question, () => this.handleAction({ type: 'delete', payload: control }), () => { });
+    this.fireUi.alertError(question, () => this.handleAction({ type: 'delete', payload: control }), () => { });
   }
 
 
@@ -82,11 +82,11 @@ export class ControlComponent implements OnDestroy {
         this.subscriptions.push(this.controlRef.create(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Control Created', 'The Control was created successfully.');
+            this.fireUi.toastSuccess('Control Created', 'The Control was created successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Create Control Failed', err.message || err.error.message);
+            this.fireUi.toastError('Create Control Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -94,21 +94,21 @@ export class ControlComponent implements OnDestroy {
         this.subscriptions.push(this.controlRef.upsert(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Control Updated', 'The Control was updated successfully.');
+            this.fireUi.toastSuccess('Control Updated', 'The Control was updated successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Update Control Failed', err.message || err.error.message);
+            this.fireUi.toastError('Update Control Failed', err.message || err.error.message);
           },
         ));
         break;
       case 'delete':
         this.subscriptions.push(this.controlRef.remove(event.payload).subscribe(
           () => {
-            this.uiService.toastSuccess('Control Deleted', 'The Control was deleted successfully.');
+            this.fireUi.toastSuccess('Control Deleted', 'The Control was deleted successfully.');
           },
           (err) => {
-            this.uiService.toastError('Delete Control Failed', err.message || err.error.message);
+            this.fireUi.toastError('Delete Control Failed', err.message || err.error.message);
           },
         ));
         break;

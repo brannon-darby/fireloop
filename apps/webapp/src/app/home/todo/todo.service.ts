@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { FireLoopRef, Todo } from '../../shared/sdk/models';
-import { RealTime } from '../../shared/sdk/services/core/real.time';
+import { RealTime, FireLoopRef, Todo } from '../../sdk';
 import { Subscription } from 'rxjs/Subscription';
-import { FormService } from '../../ui/form/ui-form.service';
+import { FireUi } from '@fireloop/fire-ui';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -11,10 +10,8 @@ export class TodoService {
   public subscriptions: Subscription[] = new Array<Subscription>();
 
   constructor(
-    private formService: FormService,
-  ) {
-
-  }
+    private fireUi: FireUi,
+  ) { }
 
   getCardButtons() {
     return {
@@ -44,19 +41,19 @@ export class TodoService {
 
   getFormFields(formType: string) {
     const fields = [
-      this.formService.input('text', {
+      this.fireUi.fireForm.input('text', {
         label: 'Text',
         addonLeft: {
           class: 'fa fa-fw fa-commenting'
         }
       }),
-      this.formService.date('dueAt', {
+      this.fireUi.fireForm.date('dueAt', {
         label: 'Due Date'
       }),
     ];
     if (formType === 'update') {
       fields.push(
-        this.formService.checkbox('done', {
+        this.fireUi.fireForm.checkbox('done', {
           label: 'Done?',
         }),
       );

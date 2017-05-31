@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { FireUiModule } from '@fireloop/fire-ui';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth.component';
-import { UiModule } from '../ui/ui.module';
 import { StatusComponent } from './status/status.component';
 import { AuthEffects } from '../store/effects/auth';
 
@@ -14,8 +15,8 @@ import { AuthEffects } from '../store/effects/auth';
   imports: [
     CommonModule,
     FormsModule,
-    UiModule,
     RouterModule,
+    FireUiModule,
   ],
   declarations: [
     AuthComponent,

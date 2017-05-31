@@ -7,14 +7,14 @@ import { FormlyModule, FormlyBootstrapModule } from 'ng-formly';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2BreadcrumbModule } from 'ng2-breadcrumb/ng2-breadcrumb';
 
+import { FireForm, FormComponent, CardComponent } from './components';
 import { BodyComponent } from './layout/body/body.component';
-import { CardComponent } from './components/card/card.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { UiFormComponent } from './form/ui-form.component';
-import { FormlyFieldDatePicker } from './form/formly.field.date-picker'
+
+import { FireUi } from './fire-ui';
 
 @NgModule({
   imports: [
@@ -34,18 +34,18 @@ import { FormlyFieldDatePicker } from './form/formly.field.date-picker'
     HeaderComponent,
     LayoutComponent,
     SidebarComponent,
-    UiFormComponent,
-    FormlyFieldDatePicker,
+    FormComponent,
   ],
   exports: [
+    BodyComponent,
     CardComponent,
+    FooterComponent,
+    HeaderComponent,
     LayoutComponent,
-    UiFormComponent,
+    SidebarComponent,
+    FormComponent,
     FormlyModule,
     FormlyBootstrapModule,
-  ],
-  providers: [
-
   ]
 })
 export class FireUiModule { }

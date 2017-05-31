@@ -1,6 +1,6 @@
 {
   "name": "@fireloop/fire-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "^4.1.3",

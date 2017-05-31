@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UiService } from '../../../ui/ui.service';
+import { FireUi } from '@fireloop/fire-ui';
 
 @Component({
   selector: 'fire-notifications',
@@ -74,15 +74,15 @@ export class NotificationsComponent {
   onClickService(button) {
     switch (button.alertType) {
       case 'toasty':
-        return this.uiService.toast(NotificationsComponent.getPayload(button));
+        return this.fireUi.toast(NotificationsComponent.getPayload(button));
       case 'sal':
-        return this.uiService.alert(NotificationsComponent.getPayload(button));
+        return this.fireUi.alert(NotificationsComponent.getPayload(button));
       default:
         return console.log('Unknown alertType', button.alertType);
     }
   }
 
   constructor(
-    private uiService: UiService,
+    private fireUi: FireUi,
   ) { }
 }

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserActions } from '../../store/actions/user';
-import { FormService } from '../../ui/form/ui-form.service';
-import { AccountApi } from '../../shared/sdk/services';
+import { FireUi } from '@fireloop/fire-ui';
+import { AccountApi } from '../../sdk';
 
 @Component({
   selector: 'fire-auth-login',
   template: `
-    <ui-form *ngIf="!userApi.isAuthenticated()" [config]="formConfig" [item]="credentials" (action)="login()"></ui-form>
+    <fire-form *ngIf="!userApi.isAuthenticated()" [config]="formConfig" [item]="credentials" (action)="login()"></fire-form>
     <button *ngIf="userApi.isAuthenticated()" class="btn btn-danger btn-block" (click)="logout()">Logout</button>
   `,
 })
@@ -22,7 +22,7 @@ export class LoginComponent {
 
   constructor(
     private store: Store<any>,
-    private formService: FormService,
+    private fireUi: FireUi,
     public userApi: AccountApi
   ) {
     this.formConfig = this.getFormConfig();
@@ -39,14 +39,14 @@ export class LoginComponent {
 
   getFormFields() {
     return [
-      this.formService.email('email', {
+      this.fireUi.fireForm.email('email', {
         label: 'Email',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-envelope-o'
         }
       }),
-      this.formService.password('password', {
+      this.fireUi.fireForm.password('password', {
         label: 'Password',
         className: 'col-12',
         addonLeft: {

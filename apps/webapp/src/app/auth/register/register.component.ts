@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserActions } from '../../store/actions';
-import { FormService } from '../../ui/form/ui-form.service';
 import { Subscription } from 'rxjs/Subscription';
-import { UiService } from '../../ui/ui.service';
+import { FireUi } from '@fireloop/fire-ui';
+
+import { UserActions } from '../../store/actions';
 
 @Component({
   selector: 'fire-auth-register',
   template: `
-    <ui-form #uiForm [config]="formConfig" [item]="registration" (action)="submit()"></ui-form>
+    <fire-form [config]="formConfig" [item]="registration" (action)="submit()"></fire-form>
   `,
   styles: []
 })
@@ -28,8 +28,8 @@ export class RegisterComponent {
 
   constructor(
     private store: Store<any>,
-    private formService: FormService,
-    private uiService: UiService
+    private fireUi: FireUi,
+    private uiService: FireUi
   ) {
     this.formConfig = this.getFormConfig();
   }
@@ -45,28 +45,28 @@ export class RegisterComponent {
 
   getFormFields() {
     return [
-      this.formService.email('email', {
+      this.fireUi.fireForm.email('email', {
         label: 'Email',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-envelope-o'
         }
       }),
-      this.formService.password('password', {
+      this.fireUi.fireForm.password('password', {
         label: 'Password',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-key'
         }
       }),
-      this.formService.input('firstName', {
+      this.fireUi.fireForm.input('firstName', {
         label: 'First Name',
         className: 'col-12',
         addonLeft: {
           class: 'fa fa-fw fa-user-o'
         }
       }),
-      this.formService.input('lastName', {
+      this.fireUi.fireForm.input('lastName', {
         label: 'Last Name',
         className: 'col-12',
         addonLeft: {

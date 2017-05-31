@@ -1,9 +1,9 @@
 <fire-card icon="ban"
-          title="Controls"
-          [createButton]="controlService.getCardButtons()"
-          (action)="create()">
+           title="Controls"
+           [createButton]="controlService.getCardButtons()"
+           (action)="create()">
   <table class="table table-striped table-sm"
-         [class.table-responsive]="!uiService.isLargeScreen">
+         [class.table-responsive]="!fireUi.isLargeScreen">
     <thead>
       <tr>
         <th *ngFor="let header of controlService.getTableHeaders()">{{ header }}</th>

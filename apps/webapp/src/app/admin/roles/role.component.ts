@@ -1,13 +1,13 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FireLoopRef, Role, Account } from '../../shared/sdk/models';
-import { RealTime, RoleApi, AccountApi } from '../../shared/sdk/services';
+import { FireUi } from '@fireloop/fire-ui';
+import { Subscription } from 'rxjs/Subscription';
+import { sortBy, omit } from 'lodash';
+
+import { RealTime, RoleApi, AccountApi, FireLoopRef, Role, Account } from '../../sdk';
 import { RoleFormComponent } from './form/role-form.component';
 import { ViewUsersComponent } from './form/view-users.component';
 import { RoleService } from './role.service';
-import { UiService } from '../../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
-import { sortBy, omit } from 'lodash';
 
 @Component({
   selector: 'fire-role',
@@ -24,7 +24,7 @@ export class RoleComponent implements OnDestroy {
 
   constructor(
     private modal: NgbModal,
-    public uiService: UiService,
+    public fireUi: FireUi,
     public roleService: RoleService,
     private rt: RealTime,
     private roleApi: RoleApi,
@@ -98,7 +98,7 @@ export class RoleComponent implements OnDestroy {
       `,
       confirmButtonText: 'Yes, Delete'
     };
-    this.uiService.alertError(question, () => this.handleAction({ type: 'delete', payload: role }), () => { });
+    this.fireUi.alertError(question, () => this.handleAction({ type: 'delete', payload: role }), () => { });
   }
 
   viewUsers(role: Role) {
@@ -136,11 +136,11 @@ export class RoleComponent implements OnDestroy {
         this.subscriptions.push(this.roleRef.create(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Role Created', 'The Role was created successfully.');
+            this.fireUi.toastSuccess('Role Created', 'The Role was created successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Create Role Failed', err.message || err.error.message);
+            this.fireUi.toastError('Create Role Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -148,21 +148,21 @@ export class RoleComponent implements OnDestroy {
         this.subscriptions.push(this.roleRef.upsert(event.payload).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('Role Updated', 'The Role was updated successfully.');
+            this.fireUi.toastSuccess('Role Updated', 'The Role was updated successfully.');
           },
           (err) => {
             this.modalRef.close();
-            this.uiService.toastError('Update Role Failed', err.message || err.error.message);
+            this.fireUi.toastError('Update Role Failed', err.message || err.error.message);
           },
         ));
         break;
       case 'delete':
         this.subscriptions.push(this.roleRef.remove(event.payload).subscribe(
           () => {
-            this.uiService.toastSuccess('Role Deleted', 'The Role was deleted successfully.');
+            this.fireUi.toastSuccess('Role Deleted', 'The Role was deleted successfully.');
           },
           (err) => {
-            this.uiService.toastError('Delete Role Failed', err.message || err.error.message);
+            this.fireUi.toastError('Delete Role Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -177,17 +177,17 @@ export class RoleComponent implements OnDestroy {
           `,
           confirmButtonText: 'Yes, Delete'
         };
-        this.uiService.alertError(question, () => this.handleAction({ type: 'deleteUser', payload: event.payload }), () => { });
+        this.fireUi.alertError(question, () => this.handleAction({ type: 'deleteUser', payload: event.payload }), () => { });
         break;
       case 'deleteUser':
         this.subscriptions.push(this.roleApi.destroyByIdPrincipals(event.payload.role.id, event.payload.mapping).subscribe(
           () => {
             this.modalRef.close();
-            this.uiService.toastSuccess('User Deleted', 'The user was deleted successfully.');
+            this.fireUi.toastSuccess('User Deleted', 'The user was deleted successfully.');
             this.refresh();
           },
           (err) => {
-            this.uiService.toastError('Delete User Failed', err.message || err.error.message);
+            this.fireUi.toastError('Delete User Failed', err.message || err.error.message);
           },
         ));
         break;
@@ -201,10 +201,10 @@ export class RoleComponent implements OnDestroy {
           () => {
             this.refresh();
             this.modalRef.close();
-            this.uiService.toastSuccess('User Added', 'The user was added successfully.');
+            this.fireUi.toastSuccess('User Added', 'The user was added successfully.');
           },
           (err) => {
-            this.uiService.toastError('Add User Failed', err.message || err.error.message);
+            this.fireUi.toastError('Add User Failed', err.message || err.error.message);
           },
         ));
         break;

@@ -1,9 +1,2 @@
-$fa-font-path: '~font-awesome/fonts';
-$web-font-path: "https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed";
-@import './app/ui/styles/variables';
-@import '~font-awesome/scss/font-awesome';
-@import './app/ui/styles/toasty';
-@import '~sweetalert2/src/sweetalert2';
-@import '~bootstrap/scss/bootstrap';
-@import './app/ui/styles/bootswatch';
-@import './app/ui/styles/custom';
+@import "variables";
+@import "../../../packages/fire-ui/styles/fire";

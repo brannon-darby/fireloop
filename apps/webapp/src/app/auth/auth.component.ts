@@ -1,11 +1,11 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FireLoopRef, Account, SDKToken } from '../shared/sdk/models';
-import { RealTime, AccountApi } from '../shared/sdk/services';
-import { Store } from '@ngrx/store';
-import { UiService, NavItem } from '../ui/ui.service';
-import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngrx/store';
+import { FireUi, NavItem } from '@fireloop/fire-ui';
+import { Subscription } from 'rxjs/Subscription';
+
+import { RealTime, AccountApi, FireLoopRef, Account, SDKToken } from '../sdk';
 
 @Component({
   template: `
@@ -35,7 +35,7 @@ export class AuthComponent implements OnDestroy {
   public nav: NavItem[];
 
   constructor(
-    private uiService: UiService,
+    private fireUi: FireUi,
     public userApi: AccountApi,
     public router: Router
   ) {
@@ -52,26 +52,26 @@ export class AuthComponent implements OnDestroy {
   processLogin(event: any) {
     this.subscriptions.push(this.userApi.login(event).subscribe(
       (token: SDKToken) => {
-        let sidebarNav = this.uiService.getSidebarNav();
+        let sidebarNav = this.fireUi.getSidebarNav();
         sidebarNav[1].icon = 'unlock';
-        this.uiService.setSidebarNav(sidebarNav);
-        this.uiService.toastSuccess('Login Success', 'You have logged in successfully.');
+        this.fireUi.setSidebarNav(sidebarNav);
+        this.fireUi.toastSuccess('Login Success', 'You have logged in successfully.');
       },
       (err: any) => {
-        this.uiService.toastError('Login Failed', err.message || err.error.message);
+        this.fireUi.toastError('Login Failed', err.message || err.error.message);
       }));
   }
 
   processLogout(event: any) {
     this.subscriptions.push(this.userApi.logout().subscribe(
       () => {
-        let sidebarNav = this.uiService.getSidebarNav();
+        let sidebarNav = this.fireUi.getSidebarNav();
         sidebarNav[1].icon = 'lock';
-        this.uiService.setSidebarNav(sidebarNav);
-        this.uiService.toastSuccess('Logout Success', 'You have logged out successfully');
+        this.fireUi.setSidebarNav(sidebarNav);
+        this.fireUi.toastSuccess('Logout Success', 'You have logged out successfully');
       },
       (err: any) => {
-        this.uiService.toastError('Logout Failed', err.message || err.error.message);
+        this.fireUi.toastError('Logout Failed', err.message || err.error.message);
       }));
   }
 

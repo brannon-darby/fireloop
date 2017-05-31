@@ -4,12 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { UiDemoComponent } from './ui-demo.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { UiModule } from '../../ui/ui.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    UiModule,
     RouterModule
   ],
   declarations: [
@@ -20,6 +18,7 @@ import { UiModule } from '../../ui/ui.module';
     UiDemoComponent,
   ],
   providers: [
+
   ]
 })
 export class UiDemoModule { }

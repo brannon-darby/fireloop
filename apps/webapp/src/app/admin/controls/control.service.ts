@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Role } from '../../shared/sdk/models';
-import { SDKModels, RoleApi, Models } from '../../shared/sdk/services';
 import { Subscription } from 'rxjs/Subscription';
-import { FormService } from '../../ui/form/ui-form.service';
+import { FireUi } from '@fireloop/fire-ui';
 import { Observable } from 'rxjs/Observable';
 import { sortBy } from 'lodash';
+
+import { SDKModels, RoleApi, Models, Role } from '../../sdk';
 
 @Injectable()
 export class ControlService {
@@ -14,7 +14,7 @@ export class ControlService {
   roles: Role[];
 
   constructor(
-    private formService: FormService,
+    private fireUi: FireUi,
     private sdkModels: SDKModels,
     private roleApi: RoleApi
   ) {
@@ -63,7 +63,7 @@ export class ControlService {
     this.models.forEach((model: any) => (models.push({ label: model, value: model })));
     options.roles.forEach((role: any) => (roles.push({ label: role.name, value: role.name })));
     let fields = [
-      this.formService.select('model', {
+      this.fireUi.fireForm.select('model', {
         label: 'Model',
         className: 'col-12 col-lg-6',
         addonLeft: {
@@ -71,7 +71,7 @@ export class ControlService {
         },
         options: models
       }),
-      this.formService.select('property', {
+      this.fireUi.fireForm.select('property', {
         label: 'Property',
         className: 'col-12 col-lg-6',
         addonLeft: {
@@ -92,7 +92,7 @@ export class ControlService {
           }
         ]
       }),
-      this.formService.select('accessType', {
+      this.fireUi.fireForm.select('accessType', {
         label: 'Access Type',
         className: 'col-12 col-lg-6',
         addonLeft: {
@@ -117,7 +117,7 @@ export class ControlService {
           }
         ]
       }),
-      this.formService.select('permission', {
+      this.fireUi.fireForm.select('permission', {
         label: 'Permission',
         className: 'col-12 col-lg-6',
         addonLeft: {
@@ -134,7 +134,7 @@ export class ControlService {
           }
         ]
       }),
-      this.formService.select('principalType', {
+      this.fireUi.fireForm.select('principalType', {
         label: 'Principal Type',
         className: 'col-12 col-lg-6',
         addonLeft: {
@@ -147,7 +147,7 @@ export class ControlService {
           }
         ]
       }),
-      this.formService.select('principalId', {
+      this.fireUi.fireForm.select('principalId', {
         label: 'Principal ID',
         className: 'col-12 col-lg-6',
         addonLeft: {

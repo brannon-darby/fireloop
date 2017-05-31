@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToastyService, ToastyConfig } from 'ng2-toasty';
 import { assign, noop } from 'lodash';
 import swal, { SweetAlertOptions } from 'sweetalert2';
+import { FireForm } from './components/form/fire-form';
 
 @Injectable()
 export class FireUi {
@@ -12,8 +13,9 @@ export class FireUi {
   public isLargeScreen: boolean;
 
   constructor(
-    private toastyService: ToastyService,
-    private toastyConfig: ToastyConfig,
+    public toastyService: ToastyService,
+    public toastyConfig: ToastyConfig,
+    public fireForm: FireForm,
   ) {
     this.toastyConfig.limit = 10;
     this.toastyConfig.theme = 'bootstrap';

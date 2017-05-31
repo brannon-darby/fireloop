@@ -8,10 +8,6 @@ import { RegisterComponent } from '../auth/register/register.component';
 import { TodoComponent } from './todo/todo.component';
 import { UiDemoComponent } from './ui/ui-demo.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
-import { NoteComponent } from './note/note.component';
-import { FileComponent } from '../files/file.component';
-import { UploadFormComponent } from '../files/upload/upload-form.component';
-import { ContainerListComponent } from '../files/list/container-list.component';
 
 const routes: Routes = [
   {
@@ -37,17 +33,7 @@ const routes: Routes = [
           { path: 'notifications', component: NotificationsComponent },
         ]
       },
-      {
-        path: 'files',
-        component: FileComponent,
-        children: [
-          { path: '', redirectTo: 'containers', pathMatch: 'full' },
-          { path: 'containers', component: ContainerListComponent },
-          { path: 'upload', component: UploadFormComponent },
-        ]
-      },
       { path: 'todos', component: TodoComponent },
-      { path: 'notes', component: NoteComponent },
     ]
   }
 ];
